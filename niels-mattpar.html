@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niels - MattPar | YouTube Growth Expert</title>
+    <meta name="description" content="YouTube growth strategy and online business consulting with Niels at MattPar — helping creators turn content into income.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --dark:    #264653;
+            --teal:    #2A9D8F;
+            --yellow:  #E9C46A;
+            --orange:  #F4A261;
+            --light:   #FAFAF8;
+            --text:    #1a2e38;
+            --muted:   #5c7a84;
+            --border:  rgba(38,70,83,0.1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 200;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(250,250,248,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        .nav-logo span { color: var(--teal); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.25s;
+        }
+        .nav-links a:hover { color: var(--dark); }
+
+        .nav-cta {
+            background: var(--teal) !important;
+            color: #fff !important;
+            padding: 0.5rem 1.3rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            transition: background 0.25s !important;
+        }
+        .nav-cta:hover { background: var(--dark) !important; }
+
+        /* hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 61px; left: 0; right: 0;
+            background: var(--light);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 5%;
+            z-index: 199;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .mobile-menu a:last-child { border-bottom: none; }
+
+        /* ── HERO ── */
+        header {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 3rem;
+            padding: 7rem 5% 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-text .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(42,157,143,0.1);
+            color: var(--teal);
+            border: 1px solid rgba(42,157,143,0.25);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.4rem;
+        }
+
+        .hero-text h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
+            line-height: 1.1;
+            color: var(--dark);
+            margin-bottom: 1.4rem;
+        }
+        .hero-text h1 em {
+            font-style: italic;
+            color: var(--teal);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 480px;
+            line-height: 1.75;
+            margin-bottom: 2.2rem;
+        }
+
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+        .btn-main {
+            background: var(--dark);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.25s, transform 0.2s;
+            display: inline-block;
+        }
+        .btn-main:hover { background: var(--teal); transform: translateY(-2px); }
+
+        .btn-ghost {
+            color: var(--dark);
+            padding: 0.85rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1.5px solid var(--border);
+            transition: border-color 0.25s, color 0.25s;
+            display: inline-block;
+        }
+        .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+        /* hero visual */
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .hero-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 24px rgba(38,70,83,0.06);
+        }
+
+        .hero-card.accent {
+            background: var(--dark);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .hero-card .card-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 0.5rem;
+        }
+        .hero-card.accent .card-label { color: var(--yellow); }
+
+        .hero-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+        }
+        .hero-card.accent h3 { color: #fff; }
+
+        .hero-card p { font-size: 0.9rem; color: var(--muted); }
+        .hero-card.accent p { color: rgba(255,255,255,0.65); }
+
+        .stat-row {
+            display: flex;
+            gap: 1rem;
+        }
+        .stat-box {
+            flex: 1;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(38,70,83,0.05);
+        }
+        .stat-box h4 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.7rem;
+            color: var(--dark);
+        }
+        .stat-box span { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+
+        /* ── SERVICES ── */
+        #services {
+            background: var(--dark);
+            padding: 6rem 5%;
+        }
+        #services .inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: var(--yellow);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-heading {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            color: #fff;
+            margin-bottom: 0.8rem;
+            line-height: 1.15;
+        }
+
+        .section-lead {
+            color: rgba(255,255,255,0.55);
+            font-size: 1rem;
+            max-width: 500px;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .svc {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 2rem 1.6rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .svc:hover { background: rgba(255,255,255,0.09); transform: translateY(-4px); }
+
+        .svc-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .svc h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .svc p { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+        /* ── ABOUT ── */
+        #about {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-card {
+            background: var(--teal);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 180px; height: 180px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+        .about-card::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -20px;
+            width: 220px; height: 220px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .avatar {
+            width: 80px; height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--teal);
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
+            position: relative; z-index: 1;
+        }
+        .about-card .role {
+            font-size: 0.88rem;
+            font-weight: 600;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.5rem;
+            position: relative; z-index: 1;
+        }
+
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            position: relative; z-index: 1;
+        }
+        .atag {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+            padding: 0.25rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .about-body .section-tag { color: var(--teal); }
+        .about-body .section-heading { color: var(--dark); }
+        .about-body .section-lead { color: var(--muted); margin-bottom: 1.5rem; }
+
+        .about-body p {
+            font-size: 0.97rem;
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+        .highlight-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 0.4rem 0;
+            font-weight: 500;
+        }
+        .highlight-list li::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── CTA ── */
+        #contact {
+            background: var(--yellow);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        #contact .inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        #contact .section-tag { color: var(--dark); opacity: 0.6; }
+        #contact .section-heading { color: var(--dark); margin-bottom: 1rem; }
+        #contact p {
+            color: rgba(38,70,83,0.7);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--dark);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background 0.25s, transform 0.2s;
+        }
+        .cta-btn:hover { background: var(--teal); transform: translateY(-2px); }
+
+        .contact-meta {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .contact-meta a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            opacity: 0.75;
+            transition: opacity 0.2s;
+        }
+        .contact-meta a:hover { opacity: 1; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            padding: 1.8rem 5%;
+            font-size: 0.85rem;
+        }
+
+        /* ── ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .reveal.visible { opacity: 1; transform: none; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 6rem;
+                max-width: 640px;
+            }
+            .hero-text p { max-width: 100%; }
+            .hero-actions { justify-content: center; }
+            .hero-visual { display: none; }
+            #about {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                max-width: 640px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            header { padding: 5.5rem 5% 3rem; }
+
+            .hero-text h1 { font-size: 2.4rem; }
+
+            #services { padding: 4rem 5%; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+
+            #about { padding: 4rem 5%; }
+            .about-card { padding: 2rem 1.5rem; }
+
+            #contact { padding: 4rem 5%; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .stat-row { flex-direction: column; }
+            .hero-actions { flex-direction: column; align-items: stretch; text-align: center; }
+            .btn-main, .btn-ghost { text-align: center; }
+            .contact-meta { flex-direction: column; gap: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="#" class="nav-logo">Matt<span>Par</span></a>
+    <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="hamburger" id="menuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#contact" class="mobile-link">Get Started →</a>
+</div>
+
+<!-- HERO -->
+<header>
+    <div class="hero-text reveal">
+        <div class="eyebrow">🎬 YouTube Growth Specialist</div>
+        <h1>Turn Your Channel Into a <em>Real Business</em></h1>
+        <p>Niels helps creators and entrepreneurs at MattPar grow audiences, build systems, and create income streams that actually last — with strategies proven across 12+ channels.</p>
+        <div class="hero-actions">
+            <a href="#contact" class="btn-main">Work With Niels</a>
+            <a href="#services" class="btn-ghost">See Services</a>
+        </div>
+    </div>
+
+    <div class="hero-visual reveal">
+        <div class="hero-card accent">
+            <div class="card-label">Proven Track Record</div>
+            <h3>1B+ Views Generated</h3>
+            <p>Across 12+ managed YouTube channels with strategies that scale.</p>
+        </div>
+        <div class="stat-row">
+            <div class="stat-box">
+                <h4>2M+</h4>
+                <span>Subscribers<br>Grown</span>
+            </div>
+            <div class="stat-box">
+                <h4>12+</h4>
+                <span>Active<br>Channels</span>
+            </div>
+            <div class="stat-box">
+                <h4>10K+</h4>
+                <span>Students<br>Taught</span>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div class="card-label">Monetization Focus</div>
+            <h3>Views → Revenue</h3>
+            <p>Building real businesses around YouTube audiences — not just chasing numbers.</p>
+        </div>
+    </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+    <div class="inner">
+        <div class="reveal">
+            <div class="section-tag">What We Do</div>
+            <h2 class="section-heading">Everything You Need<br>to Grow Online</h2>
+            <p class="section-lead">From your first 1,000 subscribers to scaling a full online business — Niels has done it and can walk you through it.</p>
+        </div>
+        <div class="services-grid">
+            <div class="svc reveal">
+                <div class="svc-icon">🎬</div>
+                <h3>YouTube Channel Strategy</h3>
+                <p>Niche selection, content frameworks, and algorithm-friendly systems to grow your channel consistently.</p>
+            </div>
+            <div class="svc reveal">
+                <div class="svc-icon">💰</div>
+                <h3>Monetization Roadmaps</h3>
+                <p>Build revenue beyond AdSense — courses, affiliates, sponsorships, and product funnels that convert.</p>
+            </div>
+            <div class="svc reveal">
+                <div class="svc-icon">📊</div>
+                <h3>Analytics & Optimization</h3>
+                <p>Deep-dive into your channel data, identify what's working, and double down with a clear growth plan.</p>
+            </div>
+            <div class="svc reveal">
+                <div class="svc-icon">🎓</div>
+                <h3>1-on-1 Coaching</h3>
+                <p>Personalized sessions to tackle your specific challenges and accelerate your results — no generic advice.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="about-card reveal">
+        <div class="avatar">N</div>
+        <h3>Niels</h3>
+        <div class="role">YouTube Strategist · MattPar</div>
+        <div class="about-tags">
+            <span class="atag">YouTube Growth</span>
+            <span class="atag">Online Business</span>
+            <span class="atag">Monetization</span>
+            <span class="atag">Content Strategy</span>
+            <span class="atag">Coaching</span>
+        </div>
+    </div>
+    <div class="about-body reveal">
+        <div class="section-tag">About Niels</div>
+        <h2 class="section-heading" style="color:var(--dark);">No Theory. Just What Actually Works.</h2>
+        <p>Niels is part of the MattPar team — one of the most recognized names in YouTube growth, with 12+ channels, 2 million subscribers, and over a billion views to back it up.</p>
+        <p>The strategies Niels teaches aren't from a textbook — they're the same ones being used right now to grow real channels and build real businesses online.</p>
+        <ul class="highlight-list">
+            <li>Proven YouTube growth frameworks</li>
+            <li>Monetization beyond just ad revenue</li>
+            <li>10,000+ students already trained</li>
+            <li>US-based, worldwide reach</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="inner reveal">
+        <div class="section-tag">Ready to Start?</div>
+        <h2 class="section-heading">Let's Build Something Together</h2>
+        <p>Whether you're just starting your channel or ready to turn an existing audience into a business — reach out and let's talk about what's possible.</p>
+        <a href="mailto:niels@mattpar.com" class="cta-btn">Get In Touch</a>
+        <div class="contact-meta">
+            <a href="mailto:niels@mattpar.com">📧 niels@mattpar.com</a>
+            <a href="https://mattpar.com" target="_blank">🌐 mattpar.com</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 MattPar. All rights reserved.</p>
+</footer>
+
+<script>
+    // Hamburger menu
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => menu.classList.toggle('open'));
+    document.querySelectorAll('.mobile-link').forEach(l => {
+        l.addEventListener('click', () => menu.classList.remove('open'));
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+
+    // Reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
