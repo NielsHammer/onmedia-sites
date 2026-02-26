@@ -1,2 +1,2 @@
 # onmedia-sites
-ebsite mockups for client outreach
+Website mockups for client outreach
