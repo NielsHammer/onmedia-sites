@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Par - Tube Accelerator | Make Money on YouTube Without Making Videos</title>
+    <meta name="description" content="Join 10,000+ students learning how to build profitable YouTube channels without ever showing your face. Matt Par's Tube Accelerator program.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF0033;
+            --primary-dark: #CC0029;
+            --accent: #FFD60A;
+            --dark: #0A0A0A;
+            --dark-surface: #141414;
+            --dark-card: #1A1A1A;
+            --dark-border: #2A2A2A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --text-muted: #6B6B6B;
+            --gradient-red: linear-gradient(135deg, #FF0033 0%, #FF4466 100%);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'DM Sans',sans-serif; background:var(--dark); color:var(--text-primary); line-height:1.6; overflow-x:hidden; }
+        h1,h2,h3,h4,h5 { font-family:'Fraunces',serif; line-height:1.2; }
+        .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+        nav { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(10,10,10,0.85); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-bottom:1px solid var(--dark-border); transition:all .3s ease; }
+        nav .container { display:flex; justify-content:space-between; align-items:center; height:72px; }
+        .nav-logo { font-family:'Fraunces',serif; font-size:1.5rem; font-weight:700; color:var(--text-primary); text-decoration:none; }
+        .nav-logo span { color:var(--primary); }
+        .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+        .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:.95rem; font-weight:500; transition:color .3s; }
+        .nav-links a:hover { color:var(--text-primary); }
+        .nav-cta { background:var(--gradient-red); color:white!important; padding:10px 24px; border-radius:8px; font-weight:600!important; transition:transform .3s,box-shadow .3s!important; }
+        .nav-cta:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,0,51,.3); }
+        .mobile-toggle { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
+        .mobile-toggle span { width:24px; height:2px; background:var(--text-primary); }
+
+        .hero { min-height:100vh; display:flex; align-items:center; padding-top:72px; position:relative; overflow:hidden; }
+        .hero::before { content:''; position:absolute; top:-50%; right:-20%; width:800px; height:800px; background:radial-gradient(circle,rgba(255,0,51,.08) 0%,transparent 70%); border-radius:50%; pointer-events:none; }
+        .hero::after { content:''; position:absolute; bottom:-30%; left:-10%; width:600px; height:600px; background:radial-gradient(circle,rgba(255,214,10,.05) 0%,transparent 70%); border-radius:50%; pointer-events:none; }
+        .hero .container { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; position:relative; z-index:1; }
+        .hero-content { max-width:600px; }
+        .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,0,51,.1); border:1px solid rgba(255,0,51,.2); padding:8px 16px; border-radius:100px; font-size:.85rem; font-weight:600; color:var(--primary); margin-bottom:24px; }
+        .hero h1 { font-size:3.8rem; font-weight:800; margin-bottom:24px; letter-spacing:-.02em; }
+        .hero h1 .highlight { background:var(--gradient-red); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .hero p { font-size:1.2rem; color:var(--text-secondary); margin-bottom:40px; max-width:500px; }
+        .hero-buttons { display:flex; gap:16px; flex-wrap:wrap; }
+        .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--gradient-red); color:white; padding:16px 32px; border-radius:12px; text-decoration:none; font-weight:600; font-size:1.05rem; border:none; cursor:pointer; transition:transform .3s,box-shadow .3s; }
+        .btn-primary:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(255,0,51,.35); }
+        .btn-secondary { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--text-primary); padding:16px 32px; border-radius:12px; text-decoration:none; font-weight:600; font-size:1.05rem; border:1px solid var(--dark-border); cursor:pointer; transition:all .3s; }
+        .btn-secondary:hover { background:var(--dark-card); border-color:var(--text-muted); }
+        .hero-visual { display:flex; justify-content:center; align-items:center; }
+        .hero-stats-card { background:var(--dark-card); border:1px solid var(--dark-border); border-radius:20px; padding:40px; width:100%; max-width:460px; }
+        .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+        .stat-item { text-align:center; }
+        .stat-number { font-family:'Fraunces',serif; font-size:2.4rem; font-weight:800; margin-bottom:4px; }
+        .stat-number.red { color:var(--primary); }
+        .stat-number.gold { color:var(--accent); }
+        .stat-number.white { color:var(--text-primary); }
+        .stat-label { font-size:.85rem; color:var(--text-muted); font-weight:500; text-transform:uppercase; letter-spacing:.05em; }
+        .stats-divider { grid-column:1/-1; height:1px; background:var(--dark-border); }
+
+        .social-proof { padding:40px 0; border-top:1px solid var(--dark-border); border-bottom:1px solid var(--dark-border); background:var(--dark-surface); }
+        .proof-items { display:flex; justify-content:center; align-items:center; gap:48px; flex-wrap:wrap; }
+        .proof-item { display:flex; align-items:center; gap:12px; color:var(--text-secondary); font-size:.95rem; font-weight:500; }
+        .proof-icon { font-size:1.4rem; }
+
+        .what-you-get { padding:120px 0; }
+        .section-header { text-align:center; margin-bottom:64px; }
+        .section-tag { display:inline-block; color:var(--primary); font-weight:600; font-size:.9rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:16px; }
+        .section-header h2 { font-size:2.8rem; font-weight:700; margin-bottom:16px; }
+        .section-header p { color:var(--text-secondary); font-size:1.1rem; max-width:600px; margin:0 auto; }
+        .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+        .feature-card { background:var(--dark-card); border:1px solid var(--dark-border); border-radius:16px; padding:36px; transition:all .3s; position:relative; overflow:hidden; }
+        .feature-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--gradient-red); opacity:0; transition:opacity .3s; }
+        .feature-card:hover { border-color:rgba(255,0,51,.3); transform:translateY(-4px); }
+        .feature-card:hover::before { opacity:1; }
+        .feature-icon { font-size:2rem; margin-bottom:20px; }
+        .feature-card h3 { font-family:'DM Sans',sans-serif; font-size:1.15rem; font-weight:700; margin-bottom:12px; }
+        .feature-card p { color:var(--text-secondary); font-size:.95rem; line-height:1.7; }
+
+        .results { padding:120px 0; background:var(--dark-surface); border-top:1px solid var(--dark-border); border-bottom:1px solid var(--dark-border); }
+        .results-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+        .results-content h2 { font-size:2.8rem; margin-bottom:24px; }
+        .results-content p { color:var(--text-secondary); font-size:1.05rem; margin-bottom:32px; }
+        .result-list { list-style:none; display:flex; flex-direction:column; gap:16px; }
+        .result-list li { display:flex; align-items:flex-start; gap:12px; font-size:1rem; color:var(--text-secondary); }
+        .result-list li .check { color:var(--accent); font-size:1.2rem; flex-shrink:0; margin-top:2px; }
+        .results-numbers { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+        .number-card { background:var(--dark-card); border:1px solid var(--dark-border); border-radius:16px; padding:32px; text-align:center; transition:all .3s; }
+        .number-card:hover { border-color:rgba(255,0,51,.3); }
+        .number-card .big-number { font-family:'Fraunces',serif; font-size:2.5rem; font-weight:800; color:var(--primary); margin-bottom:8px; }
+        .number-card .number-label { font-size:.9rem; color:var(--text-muted); font-weight:500; }
+
+        .about { padding:120px 0; }
+        .about-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:60px; align-items:center; }
+        .about-image-placeholder { background:var(--dark-card); border:1px solid var(--dark-border); border-radius:20px; padding:48px; text-align:center; aspect-ratio:4/5; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:16px; }
+        .about-avatar { width:120px; height:120px; border-radius:50%; background:var(--gradient-red); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:3rem; font-weight:700; margin-bottom:8px; }
+        .about-content .section-tag { text-align:left; }
+        .about-content h2 { font-size:2.8rem; margin-bottom:24px; }
+        .about-content p { color:var(--text-secondary); font-size:1.05rem; margin-bottom:20px; line-height:1.8; }
+        .about-highlights { display:flex; gap:32px; margin-top:32px; padding-top:32px; border-top:1px solid var(--dark-border); }
+        .about-highlight { text-align:center; }
+        .about-highlight .number { font-family:'Fraunces',serif; font-size:1.8rem; font-weight:700; color:var(--accent); }
+        .about-highlight .label { font-size:.85rem; color:var(--text-muted); margin-top:4px; }
+
+        .testimonials { padding:120px 0; background:var(--dark-surface); border-top:1px solid var(--dark-border); border-bottom:1px solid var(--dark-border); }
+        .testimonial-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+        .testimonial-card { background:var(--dark-card); border:1px solid var(--dark-border); border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:20px; }
+        .testimonial-stars { color:var(--accent); font-size:1.1rem; letter-spacing:2px; }
+        .testimonial-text { color:var(--text-secondary); font-size:.95rem; line-height:1.7; flex:1; }
+        .testimonial-author { display:flex; align-items:center; gap:12px; }
+        .testimonial-avatar { width:44px; height:44px; border-radius:50%; background:var(--dark-border); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.9rem; color:var(--text-secondary); }
+        .testimonial-name { font-weight:600; font-size:.95rem; }
+        .testimonial-role { font-size:.8rem; color:var(--text-muted); }
+
+        .cta { padding:120px 0; text-align:center; position:relative; overflow:hidden; }
+        .cta::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:800px; height:800px; background:radial-gradient(circle,rgba(255,0,51,.08) 0%,transparent 60%); pointer-events:none; }
+        .cta .container { position:relative; z-index:1; }
+        .cta h2 { font-size:3.2rem; margin-bottom:20px; }
+        .cta p { color:var(--text-secondary); font-size:1.15rem; max-width:600px; margin:0 auto 40px; }
+        .cta-buttons { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+        .guarantee-badge { display:inline-flex; align-items:center; gap:8px; margin-top:24px; color:var(--text-muted); font-size:.9rem; }
+
+        footer { padding:48px 0; border-top:1px solid var(--dark-border); background:var(--dark); }
+        .footer-content { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; }
+        .footer-left p { color:var(--text-muted); font-size:.85rem; }
+        .footer-links { display:flex; gap:24px; list-style:none; }
+        .footer-links a { color:var(--text-muted); text-decoration:none; font-size:.85rem; transition:color .3s; }
+        .footer-links a:hover { color:var(--text-secondary); }
+        .footer-disclaimer { width:100%; margin-top:24px; padding-top:24px; border-top:1px solid var(--dark-border); color:var(--text-muted); font-size:.75rem; line-height:1.6; text-align:center; }
+
+        .fade-in { opacity:0; transform:translateY(30px); transition:opacity .6s ease,transform .6s ease; }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
+
+        @media(max-width:1024px){
+            .hero .container{grid-template-columns:1fr;text-align:center}
+            .hero h1{font-size:3rem}
+            .hero p{margin:0 auto 40px}
+            .hero-buttons{justify-content:center}
+            .hero-visual{justify-content:center}
+            .hero-stats-card{max-width:400px}
+            .features-grid{grid-template-columns:repeat(2,1fr)}
+            .results-grid{grid-template-columns:1fr}
+            .about-grid{grid-template-columns:1fr}
+            .about-image-placeholder{max-width:400px;margin:0 auto}
+            .testimonial-grid{grid-template-columns:1fr 1fr}
+        }
+        @media(max-width:768px){
+            .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--dark-surface);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--dark-border)}
+            .nav-links.active{display:flex}
+            .mobile-toggle{display:flex}
+            .hero h1{font-size:2.4rem}
+            .hero p{font-size:1.05rem}
+            .hero-buttons{flex-direction:column;align-items:center}
+            .btn-primary,.btn-secondary{width:100%;max-width:320px;justify-content:center}
+            .features-grid{grid-template-columns:1fr}
+            .section-header h2{font-size:2.2rem}
+            .results-content h2,.about-content h2{font-size:2.2rem}
+            .testimonial-grid{grid-template-columns:1fr}
+            .cta h2{font-size:2.4rem}
+            .proof-items{gap:24px}
+            .about-highlights{flex-wrap:wrap;gap:24px}
+        }
+        @media(max-width:480px){
+            .hero h1{font-size:2rem}
+            .section-header h2,.results-content h2,.about-content h2{font-size:1.8rem}
+            .cta h2{font-size:2rem}
+            .stat-number{font-size:1.8rem}
+            .number-card .big-number{font-size:2rem}
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="nav-logo">Tube<span>Accelerator</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">What You Get</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#about">About Matt</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="https://www.tubeaccelerator.com/training" class="nav-cta">Start Free Training &#8594;</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">&#128293; 10,000+ Students Enrolled</div>
+                <h1>Make Money on YouTube <span class="highlight">Without Making Videos</span></h1>
+                <p>Learn the exact strategies Matt Par used to build 12+ YouTube channels, gain 2 million subscribers, generate 1 billion views, and earn $10M+ online.</p>
+                <div class="hero-buttons">
+                    <a href="https://www.tubeaccelerator.com/training" class="btn-primary">Watch Free Training &#8594;</a>
+                    <a href="#features" class="btn-secondary">See What's Inside</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-stats-card fade-in">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number red">12+</div>
+                            <div class="stat-label">YouTube Channels</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number gold">$10M+</div>
+                            <div class="stat-label">Revenue Generated</div>
+                        </div>
+                        <div class="stats-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number white">2M+</div>
+                            <div class="stat-label">Subscribers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number red">1B+</div>
+                            <div class="stat-label">Total Views</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="social-proof">
+        <div class="container">
+            <div class="proof-items">
+                <div class="proof-item"><span class="proof-icon">&#127891;</span> 10,000+ Students Worldwide</div>
+                <div class="proof-item"><span class="proof-icon">&#11088;</span> Thousands of Success Stories</div>
+                <div class="proof-item"><span class="proof-icon">&#127942;</span> #1 YouTube Automation Course</div>
+                <div class="proof-item"><span class="proof-icon">&#127758;</span> Students in 100+ Countries</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="what-you-get" id="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag">What's Inside</div>
+                <h2>Everything You Need to Succeed on YouTube</h2>
+                <p>Tube Accelerator isn't just a course &#8212; it's a complete system with coaching, templates, and even a content team to help you grow.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">&#128187;</div>
+                    <h3>New Step-by-Step Strategies</h3>
+                    <p>Matt's most up-to-date, proven methods for building profitable YouTube channels from scratch &#8212; no camera required.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">&#128172;</div>
+                    <h3>Direct Access to Matt</h3>
+                    <p>Get your questions answered by Matt himself. No gatekeepers, no waiting &#8212; real mentorship from someone who's done it.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">&#128640;</div>
+                    <h3>Matt's Content Team</h3>
+                    <p>Access Matt's own video production team to create content for your channels. They'll make videos for you so you can scale faster.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">&#129761;</div>
+                    <h3>Dedicated Personal Coach</h3>
+                    <p>Get paired with a dedicated coach who guides you every step of the way and keeps you accountable to your goals.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">&#128203;</div>
+                    <h3>Templates &amp; Checklists</h3>
+                    <p>Proven templates for video scripts, thumbnails, titles, and more. Just fill in the blanks and publish winning content.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">&#128218;</div>
+                    <h3>All Previous Courses Included</h3>
+                    <p>Tube Accelerator includes every course Matt has ever created. One program, complete access, nothing held back.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results" id="results">
+        <div class="container">
+            <div class="results-grid">
+                <div class="results-content fade-in">
+                    <div class="section-tag">Proven Results</div>
+                    <h2>Real Numbers. Real Channels. Real Income.</h2>
+                    <p>Matt didn't just figure this out in theory &#8212; he built 12+ channels that collectively generate millions in revenue. Here's what makes this different:</p>
+                    <ul class="result-list">
+                        <li><span class="check">&#10003;</span> No need to show your face on camera &#8212; ever</li>
+                        <li><span class="check">&#10003;</span> Works in dozens of different niches</li>
+                        <li><span class="check">&#10003;</span> Build a team so you're not doing everything yourself</li>
+                        <li><span class="check">&#10003;</span> Multiple income streams: ads, sponsorships, products</li>
+                        <li><span class="check">&#10003;</span> Scalable &#8212; Matt runs 12+ channels simultaneously</li>
+                        <li><span class="check">&#10003;</span> Start with nothing &#8212; Matt began with just $300</li>
+                    </ul>
+                </div>
+                <div class="results-numbers fade-in">
+                    <div class="number-card">
+                        <div class="big-number">12+</div>
+                        <div class="number-label">Active YouTube Channels</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="big-number">2M+</div>
+                        <div class="number-label">Total Subscribers</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="big-number">1B+</div>
+                        <div class="number-label">Total Views</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="big-number">$10M+</div>
+                        <div class="number-label">Revenue Generated</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper fade-in">
+                    <div class="about-image-placeholder">
+                        <div class="about-avatar">MP</div>
+                        <h3 style="font-family:'Fraunces',serif;font-size:1.4rem;">Matt Par</h3>
+                        <p style="color:var(--text-muted);font-size:.9rem;">YouTube Entrepreneur &amp; Educator</p>
+                    </div>
+                </div>
+                <div class="about-content fade-in">
+                    <div class="section-tag">Meet Your Mentor</div>
+                    <h2>From $300 to Multi-Millionaire Before 25</h2>
+                    <p>Matt Par started his first YouTube channel at age 12 with nothing but a cracked iPhone and a dream. Growing up in a middle-class family in the Midwest, he knew the traditional path &#8212; school, college, 9-to-5 &#8212; wasn't for him.</p>
+                    <p>By 2015, he cracked the code on YouTube automation &#8212; building channels that generate revenue without ever showing his face on camera. He built a team, systematized the process, and scaled to 12+ channels with over 2 million subscribers.</p>
+                    <p>Today, Matt has helped over 10,000 students worldwide replicate his success through his Tube Accelerator program. His personal YouTube channel "Make Money Matt" has become a go-to resource for aspiring online entrepreneurs.</p>
+                    <div class="about-highlights">
+                        <div class="about-highlight">
+                            <div class="number">12</div>
+                            <div class="label">Started at Age</div>
+                        </div>
+                        <div class="about-highlight">
+                            <div class="number">12+</div>
+                            <div class="label">Channels Built</div>
+                        </div>
+                        <div class="about-highlight">
+                            <div class="number">10K+</div>
+                            <div class="label">Students Taught</div>
+                        </div>
+                        <div class="about-highlight">
+                            <div class="number">$10M+</div>
+                            <div class="label">Earned Online</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag">Student Success</div>
+                <h2>Thousands Have Changed Their Lives</h2>
+                <p>Don't just take Matt's word for it &#8212; hear from real students who've built profitable YouTube channels using Tube Accelerator.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="testimonial-text">"I went from zero to 50K subscribers in 8 months using Matt's strategies. The faceless approach changed everything for me &#8212; I don't have to be on camera and my channel still grows every day."</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JR</div>
+                        <div>
+                            <div class="testimonial-name">James R.</div>
+                            <div class="testimonial-role">Finance Niche Channel</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="testimonial-text">"The dedicated coach alone is worth the investment. Having someone guide me step by step made all the difference. I'm now earning $4K/month from a channel I started 6 months ago."</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SK</div>
+                        <div>
+                            <div class="testimonial-name">Sarah K.</div>
+                            <div class="testimonial-role">Health &amp; Wellness Niche</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="testimonial-text">"I was skeptical at first, but Matt's content team is incredible. They produce videos for my channel and the quality is amazing. I'm scaling to my third channel now."</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DM</div>
+                        <div>
+                            <div class="testimonial-name">David M.</div>
+                            <div class="testimonial-role">Tech &amp; Gadgets Niche</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="enroll">
+        <div class="container">
+            <div class="section-tag">Ready to Start?</div>
+            <h2>Your YouTube Empire Starts Here</h2>
+            <p>Join 10,000+ students who are building profitable YouTube channels without showing their face. Watch the free training to see exactly how it works.</p>
+            <div class="cta-buttons">
+                <a href="https://www.tubeaccelerator.com/training" class="btn-primary">Watch Free Training &#8594;</a>
+            </div>
+            <div class="guarantee-badge">&#128274; Free training &#8212; no credit card required</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="#" class="nav-logo" style="margin-bottom:8px;">Tube<span>Accelerator</span></a>
+                    <p>&copy; 2026 Above Par Training Technologies LLC. All rights reserved.</p>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="https://www.tubeaccelerator.com/terms-and-conditions">Terms</a></li>
+                    <li><a href="https://mattpar.com/privacy-policy">Privacy</a></li>
+                    <li><a href="https://mattpar.com/disclaimer">Disclaimer</a></li>
+                    <li><a href="https://www.youtube.com/c/makemoneymatt">YouTube</a></li>
+                </ul>
+            </div>
+            <div class="footer-disclaimer">
+                This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. This site is NOT endorsed by Google or YouTube in any way. Results mentioned are not typical. Your results may vary based on your effort, experience, and other factors.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav(){document.getElementById('navLinks').classList.toggle('active')}
+        var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        document.querySelectorAll('.fade-in').forEach(function(el){observer.observe(el)});
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor){anchor.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('navLinks').classList.remove('active')}})});
+        window.addEventListener('scroll',function(){var nav=document.querySelector('nav');nav.style.background=window.scrollY>50?'rgba(10,10,10,0.95)':'rgba(10,10,10,0.85)'});
+    </script>
+</body>
+</html>
